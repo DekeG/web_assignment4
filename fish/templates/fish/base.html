@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Enquiries</title>
+    <link rel="stylesheet" href={% static 'fish/style.css' %}>
+
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h1><span class="highlight">Dekimbo</span> Tech Solution</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href={% url 'dup' %}>Home</a></li>
+                    {% if user.is_authenticated %}
+                        <li><a href={% url 'logout' %}>LOGOUT</a></li>
+                    {% else %}
+                        <li><a href={% url 'login' %}>LOGIN</a></li>
+                        <li><a href={% url 'signup' %}>SIGN UP</a></li>
+                        <li><a href={% url 'admin:index' %}>ADMIN</a></li>
+                    {% endif %}
+                    <li><a href={% url 'settings' %}>About</a></li>
+                    <li class="current"><a href="enquiry.html">Enquiries</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+
+    {% block content %}
+
+
+    {% endblock content %}
+
+    <footer>
+        <p>Dekimbo Tech Solution, Copyright &copy; 2020</p>
+    </footer>
+</body>
+
+</html>

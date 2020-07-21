@@ -1,0 +1,18 @@
+{% extends 'fish/base.html' %}
+
+{% block content %}
+<table class="signup" cellpadding="2" cellspacing="5">
+        <th colspan="2" align="center">LOGIN</th>
+        <form method="POST" id="form">
+            {% csrf_token %}
+            {{ form }}
+            <tr>
+                <td colspan="2" align="center">
+                    <input class="btn" type="submit" value="LOGIN" />
+                </td>
+            </tr>
+        </form>
+    </table>
+
+
+{% endblock content %}
